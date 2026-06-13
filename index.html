@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE AI 筆記助理 | 把對話框變成大腦暫存區</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        appleBlue: '#0066CC',
+                        appleDark: '#1D1D1F',
+                        appleGray: '#86868B',
+                        appleBg: '#F5F5F7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 隱藏捲軸但保留滾動功能 */
+        ::-webkit-scrollbar { display: none; }
+        /* 簡單的浮現動畫 */
+        .fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white text-appleDark font-sans antialiased selection:bg-appleBlue selection:text-white">
+
+    <nav class="fixed w-full top-0 z-50 bg-white/70 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-extrabold tracking-tight text-lg">LINE 筆記助理</span>
+            <a href="#cta" class="bg-appleBlue text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">立即體驗</a>
+        </div>
+    </nav>
+
+    <section class="relative pt-40 pb-20 px-6 flex flex-col items-center text-center fade-in-up">
+        <div class="inline-block bg-appleBg text-appleGray text-xs font-semibold px-4 py-1.5 rounded-full mb-6 border border-gray-200">
+            ✨ 搭載全新 Gemini 2.5 雙腦引擎
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 max-w-4xl">
+            把對話框，變成你的<br class="hidden md:block">大腦暫存區。
+        </h1>
+        <p class="text-lg md:text-xl text-appleGray mb-10 max-w-2xl leading-relaxed">
+            告別文字海。貼上任何凌亂的會議記錄或思緒，瞬間還原成條理分明的精緻筆記卡片。
+        </p>
+        <div class="flex gap-4">
+            <a href="#cta" class="bg-appleBlue text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 transition duration-300 transform hover:-translate-y-1">
+                免費加入 LINE 體驗
+            </a>
+        </div>
+        <div class="mt-20 w-full max-w-3xl rounded-2xl bg-gradient-to-b from-gray-50 to-gray-200 border border-gray-200 shadow-2xl overflow-hidden aspect-video flex items-center justify-center">
+            <span class="text-appleGray font-semibold">（此處請放置 LINE 筆記卡片截圖）</span>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-appleBg">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-16 tracking-tight">不需複雜指令，一切自動發生。</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <h3 class="text-2xl font-bold mb-4">直覺輸入，零門檻</h3>
+                    <p class="text-appleGray text-lg">文字只要超過 5 個字，系統立刻自動接手處理。無需背誦任何啟動指令，貼上即整理。</p>
+                </div>
+                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <h3 class="text-xl font-bold mb-4">自動分類</h3>
+                    <p class="text-appleGray">精準定調會議、待辦、靈感等 8 大屬性，自動打上標籤。</p>
+                </div>
+                <div class="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <h3 class="text-xl font-bold mb-4">極限濃縮</h3>
+                    <p class="text-appleGray">一句話總結核心，提煉 1 到 5 點絕對精華，拒絕任何廢話。</p>
+                </div>
+                <div class="md:col-span-2 bg-white rounded-3xl p-10 shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-4">高質感視覺卡片</h3>
+                    <p class="text-appleGray text-lg">拋棄純文字排版。每次整理皆輸出高質感 UI 結構卡片。重點一目了然，長按即可全篇複製。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-black text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-16 tracking-tight">強大，且絕對私密。</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+                <div>
+                    <h4 class="text-xl font-bold mb-3 text-white">無狀態架構</h4>
+                    <p class="text-gray-400">閱後即焚，伺服器不儲存任何對話紀錄，保障最高層級隱私。</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-3 text-white">智慧防呆引導</h4>
+                    <p class="text-gray-400">資訊空泛時不硬塞廢話，而是主動引導您補充關鍵細節。</p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-3 text-white">平穩高載防護</h4>
+                    <p class="text-gray-400">支援單次 3000 字極限吞吐。遇 API 滿載時平穩提示，體驗不中斷。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold text-center mb-12">常見問題</h2>
+            <div class="space-y-4">
+                <details class="group bg-appleBg rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-lg">
+                        需要下載新的 App 嗎？
+                        <span class="transition group-open:rotate-180">＋</span>
+                    </summary>
+                    <p class="text-appleGray mt-4">完全不用。只要您的手機裡有 LINE，加入好友即可立刻開始使用，零安裝門檻。</p>
+                </details>
+                <details class="group bg-appleBg rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-lg">
+                        處理速度大概多快？
+                        <span class="transition group-open:rotate-180">＋</span>
+                    </summary>
+                    <p class="text-appleGray mt-4">採用先進的 Gemini 2.5 快閃模型，通常在 3 到 5 秒內即可為您產出完整的結構化卡片。</p>
+                </details>
+                <details class="group bg-appleBg rounded-2xl p-6 [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer text-lg">
+                        如果輸入沒有意義的亂碼會怎樣？
+                        <span class="transition group-open:rotate-180">＋</span>
+                    </summary>
+                    <p class="text-appleGray mt-4">系統具備動態審查機制。遇到亂碼或過短文字，會溫和提示您補充具體的人事時地物，絕不產出垃圾筆記。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="py-32 px-6 bg-appleBg text-center">
+        <h2 class="text-4xl font-extrabold mb-4 tracking-tight">準備好清空大腦了嗎？</h2>
+        <p class="text-appleGray text-lg mb-10">現在就加入，體驗次世代的資訊整理術。</p>
+        
+        <div class="mx-auto w-48 h-48 bg-white rounded-2xl shadow-sm border border-gray-200 flex items-center justify-center mb-8">
+            <span class="text-appleGray text-sm">（放置 QR Code 圖檔）</span>
+        </div>
+        
+        <a href="#" class="inline-block bg-appleBlue text-white px-10 py-4 rounded-full font-semibold hover:bg-blue-700 transition duration-300">
+            點擊或掃碼，立刻開始
+        </a>
+    </section>
+
+    <footer class="py-8 text-center border-t border-gray-100 text-appleGray text-sm">
+        © 2026 LINE AI 筆記助理. All rights reserved.
+    </footer>
+
+</body>
+</html>
